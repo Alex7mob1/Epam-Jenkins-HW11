@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class DriverRepo {
 
     private static final ThreadLocal<WebDriver> DRIVERS = new ThreadLocal<>();
-    private static WebDriverWait WEB_DRIVER_WAIT = null;
+    private static final ThreadLocal<WebDriverWait> WEB_DRIVER_WAIT = new ThreadLocal<>();
 
     static {
         System.setProperty(PropertiesReader.getValueProperty("name"),
@@ -36,13 +36,14 @@ public class DriverRepo {
     }
 
     public static WebDriverWait getWebDriverWait() {
-        if (WEB_DRIVER_WAIT == null)
-            WEB_DRIVER_WAIT = new WebDriverWait(getWebDriver(), 300);
-        return WEB_DRIVER_WAIT;
+        if (WEB_DRIVER_WAIT.get() == null)
+            WEB_DRIVER_WAIT.set(new WebDriverWait(getWebDriver(), 300));
+        return WEB_DRIVER_WAIT.get();
     }
 
     public static void closeBrowser() {
         DRIVERS.get().quit();
-        DRIVERS.set(null);
+        DRIVERS.remove();
+        WEB_DRIVER_WAIT.remove();
     }
 }
