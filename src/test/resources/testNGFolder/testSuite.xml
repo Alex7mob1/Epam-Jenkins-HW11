@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite" data-provider-thread-count="1">
+
+    <listeners>
+        <listener class-name="rozetka.listener.TestScreenShootListener"/>
+    </listeners>
+
+    <test name="Product Test">
+        <classes>
+            <class name="rozetkaTest.ProductTest"/>
+        </classes>
+    </test>
+</suite>

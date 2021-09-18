@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<products>
+    <product>
+        <type>Ноутбуки</type>
+        <company>Asus</company>
+        <price>2500000</price>
+    </product>
+    <product>
+        <type>Мобільні телефони</type>
+        <company>Apple</company>
+        <price>2500000</price>
+    </product>
+<!--    <product>-->
+<!--        <type>Телевізори</type>-->
+<!--        <company>LG</company>-->
+<!--        <price>2500000</price>-->
+<!--    </product>-->
+<!--    <product>-->
+<!--        <type>Планшети</type>-->
+<!--        <company>Samsung</company>-->
+<!--        <price>2500000</price>-->
+<!--    </product>-->
+<!--    <product>-->
+<!--        <type>Монітори</type>-->
+<!--        <company>Asus</company>-->
+<!--        <price>2500000</price>-->
+<!--    </product>-->
+</products>
